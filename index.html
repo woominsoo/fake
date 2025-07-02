@@ -124,7 +124,7 @@
     </div>
 
     <!-- Plinko Game View -->
-    <div id="plinkoGameView" class="w-full max-w-lg mx-auto hidden">
+    <div id="plinkoGameView" class="w-full max-w-md md:max-w-lg mx-auto hidden">
         <header class="flex justify-between items-center mb-4 px-2">
             <button class="menuBtn btn bg-slate-700 text-white font-bold py-2 px-4 rounded">메뉴</button>
             <button class="chargeBtn btn bg-blue-600 text-white font-bold py-2 px-4 rounded">잔액 충전</button>
@@ -165,20 +165,14 @@
     </div>
 
     <!-- Crash Game View -->
-    <div id="crashGameView" class="w-full max-w-5xl mx-auto hidden">
+    <div id="crashGameView" class="w-full max-w-md md:max-w-5xl mx-auto hidden">
          <header class="flex justify-between items-center mb-4 px-2">
             <button class="menuBtn btn bg-slate-700 text-white font-bold py-2 px-4 rounded">메뉴</button>
             <button class="chargeBtn btn bg-blue-600 text-white font-bold py-2 px-4 rounded">잔액 충전</button>
         </header>
         <div class="game-wrapper rounded-lg flex flex-col md:grid md:grid-cols-3">
-            <!-- Graph Display (Mobile: top, Desktop: right) -->
-            <div class="p-2 md:p-4 md:col-span-2 relative h-64 md:h-[500px] order-1 md:order-2">
-                <canvas class="crash-canvas rounded-lg"></canvas>
-                <div class="crash-multiplier text-green-400 text-6xl md:text-8xl">1.00x</div>
-                <div class="crash-status absolute top-4 left-4 text-white bg-black/50 px-3 py-1 rounded-md text-lg"></div>
-            </div>
-            <!-- Control Panel (Mobile: bottom, Desktop: left) -->
-            <div class="p-4 md:col-span-1 md:border-r md:border-slate-700 order-2 md:order-1">
+            <!-- Control Panel (Mobile: top, Desktop: left) -->
+            <div class="p-4 md:col-span-1 md:border-r md:border-slate-700">
                 <h1 class="text-2xl font-bold text-center mb-4 text-white hidden md:block">크래시</h1>
                 <div class="space-y-4">
                     <div>
@@ -203,6 +197,12 @@
                         <button class="crashBetBtn btn btn-bet w-full font-bold py-3 px-4 rounded text-lg">Bet</button>
                     </div>
                 </div>
+            </div>
+            <!-- Graph Display (Mobile: bottom, Desktop: right) -->
+            <div class="p-2 md:p-4 md:col-span-2 relative h-64 md:h-[500px]">
+                <canvas class="crash-canvas rounded-lg"></canvas>
+                <div class="crash-multiplier text-green-400 text-6xl md:text-8xl">1.00x</div>
+                <div class="crash-status absolute top-4 left-4 text-white bg-black/50 px-3 py-1 rounded-md text-lg"></div>
             </div>
         </div>
     </div>
