@@ -1,0 +1,145 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+.auth-wrapper, .game-wrapper, .lobby-wrapper {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+.auth-input {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #e2e8f0;
+}
+.auth-input::placeholder {
+    color: #64748b;
+}
+.btn {
+    transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+    filter: brightness(1.1);
+}
+.btn:active {
+    transform: translateY(1px);
+    filter: brightness(0.9);
+}
+.btn-bet {
+    background-color: #22c55e;
+    color: #0f172a;
+}
+.btn-bet:hover {
+    background-color: #4ade80;
+}
+.btn-bet:disabled {
+    background-color: #166534;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.btn-bet-control {
+    background-color: #334155;
+    color: #e2e8f0;
+}
+.bet-input {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    text-align: center;
+    width: 100px;
+}
+.bet-slider {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 8px; background: #334155;
+    outline: none; opacity: 0.7; transition: opacity .2s;
+    border-radius: 4px;
+}
+.bet-slider:hover { opacity: 1; }
+.bet-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 20px; height: 20px; background: #22c55e;
+    cursor: pointer; border-radius: 50%;
+}
+.bet-slider::-moz-range-thumb {
+    width: 20px; height: 20px; background: #22c55e;
+    cursor: pointer; border-radius: 50%;
+}
+.plinko-canvas, .crash-canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #0f172a;
+}
+/* Multiplier Box Styles */
+.multiplier-box {
+    transition: all 0.2s ease;
+    font-size: 10px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+.multiplier-box.color-1 { background-color: #fde047; color: #1e293b; } /* 0.2x */
+.multiplier-box.color-2 { background-color: #facc15; color: #1e293b; } /* 0.5x */
+.multiplier-box.color-3 { background-color: #eab308; color: white; }   /* 1x */
+.multiplier-box.color-4 { background-color: #f59e0b; color: white; }   /* 2x, 4x */
+.multiplier-box.color-5 { background-color: #f97316; color: white; }   /* 8x */
+.multiplier-box.color-6 { background-color: #dc2626; color: white; }   /* 27x */
+.multiplier-box.color-7 { background-color: #b91c1c; color: white; }   /* 110x */
+
+.multiplier-box.hit {
+    background-color: white !important;
+    color: black !important;
+    z-index: 10;
+}
+@keyframes jump {
+    0% { transform: translateY(0) scale(1.0); }
+    50% { transform: translateY(-8px) scale(1.1); }
+    100% { transform: translateY(0) scale(1.0); }
+}
+.hit-animation {
+    animation: jump 0.4s ease-out;
+}
+.lobby-card {
+    background-color: #334155;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+.lobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.crash-multiplier {
+    font-weight: 700;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: color 0.3s ease;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* History Styles */
+.history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 8px */
+    pointer-events: none;
+}
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px; /* 4rem */
+    height: 40px; /* 2.5rem */
+    border-radius: 0.25rem; /* 4px */
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    opacity: 1;
+    transition: opacity 0.8s ease-out; /* Fade-out only */
+}
+.history-item.hidden {
+    opacity: 0;
+}
+.history-item.color-1 { background-color: #fde047; color: #1e293b; }
+.history-item.color-2 { background-color: #facc15; color: #1e293b; }
+.history-item.color-3 { background-color: #eab308; color: white; }
+.history-item.color-4 { background-color: #f59e0b; color: white; }
+.history-item.color-5 { background-color: #f97316; color: white; }
+.history-item.color-6 { background-color: #dc2626; color: white; }
+.history-item.color-7 { background-color: #b91c1c; color: white; }
